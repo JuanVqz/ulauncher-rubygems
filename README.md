@@ -1,5 +1,8 @@
 # Ulauncher-rubygems
 
+![ulauncher-rubygems](https://github.com/JuanVqz/ulauncher-rubygems/assets/7331511/eac6847e-cf2d-42f7-92ea-b6785e13e228)
+
+
 Quickly search for Ruby gems on [RubyGems.org](https://rubygems.org)
 
 Possible requirements:
