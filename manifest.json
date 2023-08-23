@@ -1,5 +1,5 @@
 {
-  "required_api_version": "2.0.0",
+  "required_api_version": "^2.0.0",
   "name": "Find Your Ruby Gems",
   "description": "Quickly search for Ruby gems on RubyGems.org",
   "developer_name": "Juan Vasquez <me@juanvasquez.dev>",
