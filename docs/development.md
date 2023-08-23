@@ -1,26 +1,28 @@
 ## Development
 
-Possible requirements:
+Clone it.
 
-```python
-pip3 install panda
-pip3 install requests
-```
-
-1. Clone it.
-
-```
+```bash
 gh repo clone JuanVqz/ulauncher-rubygems
 ```
 
-2. Add it to the `extensions` folder.
+> If ulauncher is running stop it, right-click the tray ulauncher icon then click exit.
 
-```
-mv ulauncher-rubygems ~/.local/share/ulauncher/extensions/
+Start it in dev mode with the `Make` command.
+
+```bash
+cd ulauncher-rubygems
+
+make dev
 ```
 
-3. If ulauncher is running, stop it, and start a new instance with dev info.
+Possible requirements.
 
-```
-ulauncher --dev -v
+I'm not super familiarized with python, got some errors
+related to don't have installed the following packages
+
+```python
+pip3 install panda
+pip3 install ulauncher
+pip3 install requests
 ```
