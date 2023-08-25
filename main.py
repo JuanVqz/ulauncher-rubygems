@@ -26,9 +26,9 @@ class KeywordQueryEventListener(EventListener):
         gems = response.json()
         for gem in gems:
             items.append(ExtensionResultItem(icon='images/icon.png',
-                                             name='%s gem' % gem,
-                                             description='https://rubygems.org/gems/%s' % gem,
-                                             on_enter=OpenUrlAction('https://rubygems.org/gems/%s' % gem)))
+                                             name=f'{gem} gem',
+                                             description=f'https://rubygems.org/gems/{gem}',
+                                             on_enter=OpenUrlAction(f'https://rubygems.org/gems/{gem}')))
 
         return RenderResultListAction(items)
 
