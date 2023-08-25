@@ -19,6 +19,7 @@ class RubyGemsExtension(Extension):
 class KeywordQueryEventListener(EventListener):
 
     def on_event(self, event, extension):
+        max_gems = 10
         query = event.get_argument()
         gems = requests.get("https://rubygems.org/api/v1/search/autocomplete", params = { "query": query }).json()
         items = [
@@ -26,7 +27,7 @@ class KeywordQueryEventListener(EventListener):
                                          name=f'{gem} gem',
                                          description=f'https://rubygems.org/gems/{gem}',
                                          on_enter=OpenUrlAction(f'https://rubygems.org/gems/{gem}'))
-            for gem in gems
+            for gem in gems[:max_gems]
         ]
 
         return RenderResultListAction(items)
