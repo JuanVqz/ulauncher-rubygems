@@ -19,16 +19,15 @@ class RubyGemsExtension(Extension):
 class KeywordQueryEventListener(EventListener):
 
     def on_event(self, event, extension):
-        items = []
-        gems = []
         query = event.get_argument()
-        response = requests.get("https://rubygems.org/api/v1/search/autocomplete", params = { "query": query })
-        gems = response.json()
-        for gem in gems:
-            items.append(ExtensionResultItem(icon='images/icon.png',
-                                             name=f'{gem} gem',
-                                             description=f'https://rubygems.org/gems/{gem}',
-                                             on_enter=OpenUrlAction(f'https://rubygems.org/gems/{gem}')))
+        gems = requests.get("https://rubygems.org/api/v1/search/autocomplete", params = { "query": query }).json()
+        items = [
+            ExtensionResultItem(icon='images/icon.png',
+                                         name=f'{gem} gem',
+                                         description=f'https://rubygems.org/gems/{gem}',
+                                         on_enter=OpenUrlAction(f'https://rubygems.org/gems/{gem}'))
+            for gem in gems
+        ]
 
         return RenderResultListAction(items)
 
